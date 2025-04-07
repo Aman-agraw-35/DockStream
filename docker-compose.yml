@@ -1,0 +1,23 @@
+services:
+  backend:
+    build: ./back-end
+    ports:
+      - "4000:4000" 
+    networks:
+      - mern_network
+
+
+  frontend:
+    build: ./front-end
+    ports:
+      - "5173:5173"  
+    networks:
+      - mern_network
+    environment:
+      REACT_APP_API_URL: http://backend:4000
+
+
+networks:
+  mern_network:
+    driver: bridge 
+
