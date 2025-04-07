@@ -1,0 +1,52 @@
+name: Dockerized MERN CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1️⃣ Checkout code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2️⃣ Set up Docker Buildx (for multi-platform builds)
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    # 3️⃣ Log in to DockerHub (optional, if pushing images)
+    # - name: Log in to DockerHub
+    #   uses: docker/login-action@v2
+    #   with:
+    #     username: ${{ secrets.DOCKER_USERNAME }}
+    #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+    # 4️⃣ Build Docker images using docker-compose
+    - name: Build Docker Containers
+      run: docker-compose build
+
+    # 5️⃣ OPTIONAL: Run containers for testing
+    - name: Run Containers
+      run: docker-compose up -d
+
+    # 6️⃣ OPTIONAL: Run tests inside containers
+    # - name: Run backend tests
+    #   run: docker exec backend-container-name npm test
+
+    # 7️⃣ Deploy to EC2 (or another server)
+    - name: Deploy to EC2 via SSH
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.EC2_HOST }}
+        username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          cd /home/ubuntu/my-mern-app
+          git pull origin main
+          docker-compose down
+          docker-compose build
+          docker-compose up -d
