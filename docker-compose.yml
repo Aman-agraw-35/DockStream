@@ -10,7 +10,7 @@ services:
   frontend:
     build: ./front-end
     ports:
-      - "5173:5173"  
+      - "5173:80"  
     networks:
       - mern_network
     environment:
