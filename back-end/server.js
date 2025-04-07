@@ -32,6 +32,6 @@ app.get('/', (req, res) => {
 })
 
 
-app.listen(port, () => {
-    console.log(`Server Started on http://localhost:${port}`)
-})
+app.listen(port, '0.0.0.0', () => {
+    console.log(`Server Started on http://0.0.0.0:${port}`);
+});
