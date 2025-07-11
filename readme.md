@@ -28,7 +28,7 @@ A modern, production-ready MERN stack application with robust **CI/CD**, **Docke
 ---
 
 ## 🗂 Project Structure
-
+```
 mern-devops/
 ├── client/ # React frontend
 │ ├── Dockerfile
@@ -46,9 +46,8 @@ mern-devops/
 ├── .env # Environment variables
 └── README.md
 
-yaml
-Copy
-Edit
+```
+
 
 ---
 
@@ -64,88 +63,10 @@ cd mern-devops
 # 3. Build and start the application
 docker-compose up --build
 
-# 4. Visit:
-# Frontend:     http://localhost:3000
-# Backend API:  http://localhost:5000/api
-# Mongo UI:     http://localhost:8081 (if enabled)
-# Grafana:      http://localhost:3001 (login: admin/admin)
-⚙️ CI/CD Pipeline with GitHub Actions
-yaml
-Copy
-Edit
-# .github/workflows/deploy.yml
-
-name: CI/CD Pipeline
-
-on:
-  push:
-    branches: [ main ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build Docker Images
-        run: docker-compose -f docker-compose.prod.yml build
-
-      - name: Deploy to AWS EC2 via SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            cd ~/mern-devops
-            git pull origin main
-            docker-compose -f docker-compose.prod.yml down
-            docker-compose -f docker-compose.prod.yml up -d --build
-✅ This pipeline builds, tests, and deploys your app on every push to main.
-
-📊 Monitoring Setup
-🔧 Prometheus
-Prometheus is configured to scrape metrics from Node.js, MongoDB, and Docker.
-
-Target endpoints:
-
-/metrics from the backend server
-
-Docker Engine metrics
-
-Node Exporter for EC2 instance
-
-📈 Grafana
-Visualize metrics like:
-
-CPU usage
-
-Network traffic
-
-Request latency
-
-MongoDB connections
-
-Dashboards available at http://<ec2-ip>:3001
-
-Credentials: admin / admin
-
-☁️ AWS CloudWatch
-EC2 instance monitored via CloudWatch for:
-
-Disk & memory usage
-
-Logs and events
-
-Uptime & network statistics
+s
 
 📡 Deployment Architecture
-java
-Copy
-Edit
+```
 Client (React)
    ↓
 NGINX (Reverse Proxy)
@@ -158,6 +79,7 @@ AWS EC2 (Ubuntu)
 CI/CD: GitHub Actions
    ↑
 Monitoring: Prometheus + Grafana
+```
 📈 Performance Metrics
 🚀 CI/CD Runtime: ~49 seconds
 
@@ -172,13 +94,10 @@ This project is licensed under the MIT License.
 
 👨‍💻 Author
 Aman Agrawal
-📍 3rd Year | IIIT Bhopal
+📍 Final Year | IIIT Bhopal
 💻 Full Stack Developer & DevOps Enthusiast
 🔗 LinkedIn
 🔗 GitHub
 
 Star 🌟 this repository if you find it useful!
 
-python
-Copy
-Edit
