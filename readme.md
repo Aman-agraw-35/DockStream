@@ -9,7 +9,7 @@ A modern, production-ready MERN stack application with robust **CI/CD**, **Docke
 ## 📌 Features
 
 ✅ Full-stack MERN application  
-✅ Dockerized using multi-container setup (client, server, MongoDB, NGINX)  
+✅ Dockerized using multi-container setup (client, server, MongoDB)  
 ✅ GitHub Actions CI/CD pipeline  
 ✅ Deployed on AWS EC2 with SSH automation  
 ✅ Monitoring using Prometheus, Grafana, and AWS CloudWatch  
@@ -20,8 +20,7 @@ A modern, production-ready MERN stack application with robust **CI/CD**, **Docke
 ## 🖼️ Screenshots
 
  Cloudwatch dashboard | Opened Ports on EC2
-|--------------|-------------------|----------------|
-|  ![Grafana](screenshots/c.png)| ![Terminal](screenshots/terminal.png) |
+  ![Grafana](screenshots/c.png) ![Terminal](screenshots/terminal.png) 
 
 > 🔍 Place your actual screenshots in a `screenshots/` folder.
 
