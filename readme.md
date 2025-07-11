@@ -19,9 +19,9 @@ A modern, production-ready MERN stack application with robust **CI/CD**, **Docke
 
 ## 🖼️ Screenshots
 
-| Landing Page | Grafana Dashboard | Terminal Logs |
+ Cloudwatch dashboard | Opened Ports on EC2
 |--------------|-------------------|----------------|
-| ![Landing](screenshots/landing.png) | ![Grafana](screenshots/grafana.png) | ![Terminal](screenshots/terminal.png) |
+|  ![Grafana](screenshots/c.png)| ![Terminal](screenshots/terminal.png) |
 
 > 🔍 Place your actual screenshots in a `screenshots/` folder.
 
