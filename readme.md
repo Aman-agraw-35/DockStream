@@ -69,8 +69,6 @@ s
 ```
 Client (React)
    ↓
-NGINX (Reverse Proxy)
-   ↓
 Express API (Node.js)
    ↔ MongoDB (Docker Volume)
    ↓
@@ -81,6 +79,7 @@ CI/CD: GitHub Actions
 Monitoring: Prometheus + Grafana
 ```
 📈 Performance Metrics
+```
 🚀 CI/CD Runtime: ~49 seconds
 
 ⚙️ CPU Usage: ~9.98% average during load
@@ -88,16 +87,14 @@ Monitoring: Prometheus + Grafana
 📉 Manual Deployment Effort: Reduced by 100%
 
 🔍 100% Uptime with automatic container restart on crash
-
-📑 License
-This project is licensed under the MIT License.
+```
 
 👨‍💻 Author
+```
 Aman Agrawal
 📍 Final Year | IIIT Bhopal
 💻 Full Stack Developer & DevOps Enthusiast
-🔗 LinkedIn
-🔗 GitHub
+```
 
 Star 🌟 this repository if you find it useful!
 
