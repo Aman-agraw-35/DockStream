@@ -1,4 +1,4 @@
-# 🧑‍💻 MERNDevOps
+# 🧑‍💻 DockStream
 
 A modern, production-ready MERN stack application with robust **CI/CD**, **Docker-based containerization**, **real-time monitoring**, and **cloud deployment** using **AWS EC2**.
 
@@ -96,4 +96,5 @@ Aman Agrawal
 ```
 
 Star 🌟 this repository if you find it useful!
+
 
